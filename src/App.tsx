@@ -40,7 +40,7 @@ function App() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Typography variant="h3" component="h1">
+      <Typography variant="h3" component="h1" sx={{ marginBottom: 2 }}>
         Junior React Developer Roadmap
       </Typography>
       <Box>
