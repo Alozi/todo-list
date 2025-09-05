@@ -9,6 +9,7 @@ import Tab from "@mui/material/Tab";
 
 // import "./App.css";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function TabPanel({
   children,
@@ -224,6 +225,7 @@ function App() {
           </TabPanel>
         </Box>
       </Box>
+      <Footer />
     </>
   );
 }
