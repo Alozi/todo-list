@@ -10,6 +10,7 @@ import Tab from "@mui/material/Tab";
 // import "./App.css";
 import { useState } from "react";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function TabPanel({
   children,
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <Box sx={{ width: "100%" }}>
         <Typography variant="h3" component="h1" sx={{ marginBottom: 2 }}>
           Junior React Developer Roadmap
