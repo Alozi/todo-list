@@ -10,15 +10,11 @@ export default function Footer() {
           borderTop: 1,
           borderColor: "divider",
           p: 2,
-          mt: 4,
+          mt: 2,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           bgcolor: "grey.100",
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          width: "calc(100% - 32px)",
         }}
       >
         <Typography variant="body2" color="textSecondary">
