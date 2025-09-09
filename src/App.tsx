@@ -1,5 +1,4 @@
 import Checkbox from "@mui/material/Checkbox";
-import FormLabel from "@mui/material/FormLabel";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
@@ -8,6 +7,99 @@ import Container from "@mui/material/Container";
 // import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+
+interface Todo {
+  id: number;
+  text: string;
+  section: string;
+  // completed: boolean;
+}
+
+const roadmap: Todo[] = [
+  {
+    id: 1,
+    text: "Semantic tags (header, main, footer, article, section)",
+    section: "HTML",
+  },
+  { id: 2, text: "Forms and validation", section: "HTML" },
+  {
+    id: 3,
+    text: "Accessibility attributes (alt, aria-label)",
+    section: "HTML",
+  },
+  { id: 4, text: "Flexbox & Grid", section: "CSS" },
+  {
+    id: 5,
+    text: "Positioning (absolute, relative, sticky, fixed)",
+    section: "CSS",
+  },
+  { id: 6, text: "Media queries (responsive design)", section: "CSS" },
+  { id: 7, text: "Transitions & animations", section: "CSS" },
+  {
+    id: 8,
+    text: "Initializing repositories, commits, branches",
+    section: "Git",
+  },
+  { id: 9, text: "Merge vs rebase", section: "Git" },
+  { id: 10, text: ".gitignore", section: "Git" },
+  { id: 11, text: "Working with GitHub / GitLab", section: "Git" },
+  { id: 12, text: "Variables: let, const", section: "JS" },
+  { id: 13, text: "Destructuring, spread/rest operators", section: "JS" },
+  { id: 14, text: "Functions", section: "JS" },
+  {
+    id: 15,
+    text: "Arrays: map, filter, reduce, find, some, every",
+    section: "JS",
+  },
+  { id: 16, text: "Objects & JSON", section: "JS" },
+  { id: 17, text: "async/await, fetch API", section: "JS" },
+  { id: 18, text: "Modules (import/export)", section: "JS" },
+  {
+    id: 19,
+    text: "Primitive types (string, number, boolean, any, unknown)",
+    section: "TS",
+  },
+  { id: 20, text: "Arrays & objects", section: "TS" },
+  { id: 21, text: "Interfaces & type aliases", section: "TS" },
+  { id: 22, text: "Typing functions and React props", section: "TS" },
+  { id: 23, text: "Union, optional types, generics (basic)", section: "TS" },
+  { id: 24, text: "JSX & rules", section: "React Core" },
+  { id: 25, text: "Functional components", section: "React Core" },
+  { id: 26, text: "Props & children", section: "React Core" },
+  { id: 27, text: "State management with useState", section: "React Core" },
+  {
+    id: 28,
+    text: "Side effects with useEffect (lifecycle)",
+    section: "React Core",
+  },
+  {
+    id: 29,
+    text: "useRef, useMemo, useCallback (intro level)",
+    section: "React Core",
+  },
+  { id: 30, text: "Conditional rendering", section: "React Core" },
+  { id: 31, text: "Rendering lists & using key", section: "React Core" },
+  { id: 32, text: "Controlled forms & inputs", section: "React Core" },
+  { id: 33, text: "Lifting state up (state sharing)", section: "React Core" },
+  { id: 34, text: "Fetching data from APIs", section: "React Core" },
+  {
+    id: 35,
+    text: "React Router (navigation & routes)",
+    section: "React Ecosystem",
+  },
+  { id: 36, text: "Context API (global state)", section: "React Ecosystem" },
+  {
+    id: 37,
+    text: "Styling solutions: styled-components, Material UI, Tailwind (pick at least one)",
+    section: "React Ecosystem",
+  },
+  {
+    id: 38,
+    text: "Data fetching: react-query or swr (basic usage)",
+    section: "React Ecosystem",
+  },
+  { id: 39, text: "Redux Toolkit", section: "State Management" },
+];
 
 function App() {
   return (
@@ -21,207 +113,17 @@ function App() {
         >
           Junior React Developer Roadmap
         </Typography>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          HTML
-        </Typography>
-        <FormLabel component="legend"></FormLabel>
         <FormGroup>
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Semantic tags (header, main, footer, article, section)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Forms and validation"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Accessibility attributes (alt, aria-label)"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          CSS
-        </Typography>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="Flexbox & Grid" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Positioning (absolute, relative, sticky, fixed)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Media queries (responsive design)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Transitions & animations"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          Git & Version Control
-        </Typography>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Initializing repositories, commits, branches"
-          />
-          <FormControlLabel control={<Checkbox />} label="Merge vs rebase" />
-          <FormControlLabel control={<Checkbox />} label=".gitignore" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label=" Working with GitHub / GitLab"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          JavaScript (ES6+)
-        </Typography>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Variables: let, const"
-          />
-          <FormControlLabel control={<Checkbox />} label="Functions" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Destructuring, spread/rest operators"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Arrays: map, filter, reduce, find, some, every"
-          />
-          <FormControlLabel control={<Checkbox />} label="Objects & JSON" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="async/await, fetch API"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Modules (import/export)"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          TypeScript Basics (Recommended)
-        </Typography>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Primitive types (string, number, boolean, any, unknown)"
-          />
-          <FormControlLabel control={<Checkbox />} label="Arrays & objects" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label=" Interfaces & type aliases"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Typing functions and React props"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label=" Union, optional types, generics (basic)"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          React Core
-        </Typography>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="JSX & rules" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Functional components"
-          />
-          <FormControlLabel control={<Checkbox />} label="Props & children" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="State management with useState"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Side effects with useEffect (lifecycle)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="useRef, useMemo, useCallback (intro level)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Conditional rendering"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Rendering lists & using key"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Controlled forms & inputs"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Lifting state up (state sharing)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Fetching data from APIs"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          React Ecosystem
-        </Typography>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox />}
-            label="React Router (navigation & routes)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Context API (global state)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Styling solutions: styled-components, Material UI, Tailwind (pick at least one)"
-          />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Data fetching: react-query or swr (basic usage)"
-          />
-        </FormGroup>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ margin: 2, textAlign: "center" }}
-        >
-          State Management
-        </Typography>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="Redux Toolkit" />
+          {roadmap.map((item) => {
+            console.log(item);
+            return (
+              <FormControlLabel
+                control={<Checkbox />}
+                label={item.text}
+                key={item.id}
+              />
+            );
+          })}
         </FormGroup>
       </Container>
       <Footer />
