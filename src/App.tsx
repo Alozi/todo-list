@@ -1,6 +1,4 @@
-import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
@@ -8,6 +6,7 @@ import Container from "@mui/material/Container";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { useState } from "react";
+import TodoItem from "./components/TodoItem";
 
 interface Todo {
   id: number;
@@ -213,16 +212,7 @@ function App() {
         <FormGroup>
           {todos.map((item) => {
             return (
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={item.completed}
-                    onChange={() => toggleTodo(item.id)}
-                  />
-                }
-                label={item.text}
-                key={item.id}
-              />
+              <TodoItem key={item.id} item={item} toggleTodo={toggleTodo} />
             );
           })}
         </FormGroup>
