@@ -22,7 +22,7 @@ export default function Footer() {
         </Typography>
         <Box>
           <Link
-            href="https://github.com"
+            href="https://github.com/Alozi"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ ml: 2 }}
@@ -30,7 +30,7 @@ export default function Footer() {
             GitHub
           </Link>
           <Link
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/victoria-bogutska-1135a923b"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ ml: 2 }}
