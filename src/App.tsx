@@ -8,12 +8,7 @@ import Header from "./components/Header";
 import { useState } from "react";
 import TodoItem from "./components/TodoItem";
 
-interface Todo {
-  id: number;
-  text: string;
-  section: string;
-  completed: boolean;
-}
+import { type Todo } from "./types/todo";
 
 const roadmap: Todo[] = [
   {
