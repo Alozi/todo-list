@@ -20,7 +20,7 @@ export default function TodoList() {
 
   return (
     <FormGroup>
-      <TodoInput todos={todos} setTodos={setTodos} />
+      <TodoInput setTodos={setTodos} />
 
       {todos.map((item) => (
         <TodoItem key={item.id} item={item} toggleTodo={toggleTodo} />
