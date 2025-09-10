@@ -39,12 +39,9 @@ export default function Header() {
           <IconButton color="inherit">
             <AddIcon />
           </IconButton>
-          <IconButton color="inherit">
-            <FilterListIcon />
-          </IconButton>
-          <IconButton color="inherit">
+          {/* <IconButton color="inherit">
             <Brightness4Icon />
-          </IconButton>
+          </IconButton> */}
         </div>
       </Toolbar>
     </AppBar>

@@ -1,5 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 // import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -18,6 +20,13 @@ function App() {
           Junior React Developer Roadmap
         </Typography>
         <TodoList />
+        <Fab
+          color="primary"
+          aria-label="add"
+          sx={{ position: "fixed", bottom: 64, right: 32 }}
+        >
+          <AddIcon />
+        </Fab>
       </Container>
       <Footer />
     </>
