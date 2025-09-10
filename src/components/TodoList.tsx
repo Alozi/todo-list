@@ -12,6 +12,7 @@ import { Box } from "@mui/material";
 export default function TodoList() {
   const [todos, setTodos] = useState<Todo[]>(roadmap);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState("");
 
   function toggleTodo(id: number): void {
     setTodos((prevState) => {
@@ -22,7 +23,10 @@ export default function TodoList() {
   }
 
   function handleSubmit(): void {
-    if (!inputRef.current || inputRef.current.value == "") return;
+    if (!inputRef.current || inputRef.current.value == "") {
+      setError("Please enter a task");
+      return;
+    }
 
     const newTodo: Todo = {
       id: Date.now(),
@@ -33,6 +37,7 @@ export default function TodoList() {
 
     setTodos((prev) => [...prev, newTodo]);
     inputRef.current.value = "";
+    setError("");
   }
 
   return (
@@ -53,6 +58,8 @@ export default function TodoList() {
           sx={{ width: "100%" }}
           inputRef={inputRef}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+          error={!!error}
+          helperText={error}
         />
         <Button variant="contained" type="submit" onClick={handleSubmit}>
           Add
