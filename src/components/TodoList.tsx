@@ -1,7 +1,7 @@
 import FormGroup from "@mui/material/FormGroup";
 import TodoItem from "./TodoItem";
 import TodoInput from "./TodoInput";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 import { roadmap } from "../data/roadmap";
 

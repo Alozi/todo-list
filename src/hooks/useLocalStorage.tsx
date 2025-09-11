@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { type Todo } from "../types/todo";
 
-export function useLocalStorage(key: string, initialTodos: Todo[]) {
+export default function useLocalStorage(key: string, initialTodos: Todo[]) {
   const [todos, setTodos] = useState<Todo[]>(() => {
     const localStoredTodos = localStorage.getItem(key);
     return localStoredTodos ? JSON.parse(localStoredTodos) : initialTodos;
