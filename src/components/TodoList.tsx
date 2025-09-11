@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import FormGroup from "@mui/material/FormGroup";
 import TodoItem from "./TodoItem";
+import TodoInput from "./TodoInput";
 
 import { type Todo } from "../types/todo";
 import { roadmap } from "../data/roadmap";
-import TodoInput from "./TodoInput";
 
 export default function TodoList({
   inputRef,
 }: {
   inputRef: React.RefObject<HTMLInputElement | null>;
 }) {
-  const [todos, setTodos] = useState<Todo[]>(roadmap);
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const localStoredTodos = localStorage.getItem("todos");
+    return localStoredTodos ? JSON.parse(localStoredTodos) : roadmap;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   function toggleTodo(id: number): void {
     setTodos((prevState) => {
