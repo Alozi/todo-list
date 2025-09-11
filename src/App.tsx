@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
-// import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
