@@ -7,7 +7,11 @@ import { type Todo } from "../types/todo";
 import { roadmap } from "../data/roadmap";
 import TodoInput from "./TodoInput";
 
-export default function TodoList() {
+export default function TodoList({
+  inputRef,
+}: {
+  inputRef: React.RefObject<HTMLInputElement | null>;
+}) {
   const [todos, setTodos] = useState<Todo[]>(roadmap);
 
   function toggleTodo(id: number): void {
@@ -20,7 +24,7 @@ export default function TodoList() {
 
   return (
     <FormGroup>
-      <TodoInput setTodos={setTodos} />
+      <TodoInput setTodos={setTodos} inputRef={inputRef} />
 
       {todos.map((item) => (
         <TodoItem key={item.id} item={item} toggleTodo={toggleTodo} />

@@ -1,4 +1,4 @@
-import { useRef, useState, type Dispatch, type SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -6,11 +6,12 @@ import { Box } from "@mui/material";
 import { type Todo } from "../types/todo";
 
 export default function TodoInput({
+  inputRef,
   setTodos,
 }: {
   setTodos: Dispatch<SetStateAction<Todo[]>>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
 }) {
-  const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState("");
 
   function handleSubmit(): void {

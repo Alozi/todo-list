@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Fab from "@mui/material/Fab";
@@ -8,9 +9,15 @@ import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 
 function App() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function focusInput() {
+    inputRef.current?.focus();
+  }
+
   return (
     <>
-      <Header />
+      <Header focusInput={focusInput} />
       <Container maxWidth="md">
         <Typography
           variant="h3"
@@ -19,11 +26,12 @@ function App() {
         >
           Junior React Developer Roadmap
         </Typography>
-        <TodoList />
+        <TodoList inputRef={inputRef} />
         <Fab
           color="primary"
           aria-label="add"
           sx={{ position: "fixed", bottom: 64, right: 32 }}
+          onClick={focusInput}
         >
           <AddIcon />
         </Fab>
