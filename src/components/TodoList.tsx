@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
-
 import FormGroup from "@mui/material/FormGroup";
 import TodoItem from "./TodoItem";
 import TodoInput from "./TodoInput";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
-import { type Todo } from "../types/todo";
 import { roadmap } from "../data/roadmap";
 
 export default function TodoList({
@@ -12,14 +10,7 @@ export default function TodoList({
 }: {
   inputRef: React.RefObject<HTMLInputElement | null>;
 }) {
-  const [todos, setTodos] = useState<Todo[]>(() => {
-    const localStoredTodos = localStorage.getItem("todos");
-    return localStoredTodos ? JSON.parse(localStoredTodos) : roadmap;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  const [todos, setTodos] = useLocalStorage("todos", roadmap);
 
   function toggleTodo(id: number): void {
     setTodos((prevState) => {
