@@ -20,12 +20,23 @@ export default function TodoList({
     });
   }
 
+  function deleteTodo(id: number): void {
+    setTodos((prevState) => {
+      return prevState.filter((item) => item.id !== id);
+    });
+  }
+
   return (
     <FormGroup>
       <TodoInput setTodos={setTodos} inputRef={inputRef} />
 
       {todos.map((item) => (
-        <TodoItem key={item.id} item={item} toggleTodo={toggleTodo} />
+        <TodoItem
+          key={item.id}
+          item={item}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
       ))}
     </FormGroup>
   );
