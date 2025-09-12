@@ -1,4 +1,4 @@
-import FormGroup from "@mui/material/FormGroup";
+import { FormGroup } from "@mui/material";
 import TodoItem from "./TodoItem";
 import TodoInput from "./TodoInput";
 import useLocalStorage from "../hooks/useLocalStorage";

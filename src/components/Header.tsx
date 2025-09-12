@@ -1,16 +1,4 @@
-// export default function Header() {
-//   return (
-//     <header className="header">
-//
-//       <h1>ToDo List</h1>
-//     </header>
-//   );
-// }
-import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
+import { Box, AppBar, Toolbar, Typography, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 // import Brightness4Icon from "@mui/icons-material/Brightness4";
 import todoIcon from "../assets/work-order.png";

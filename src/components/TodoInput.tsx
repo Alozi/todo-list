@@ -1,8 +1,5 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
-
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { Box } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import { type Todo } from "../types/todo";
 
 export default function TodoInput({

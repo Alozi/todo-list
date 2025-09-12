@@ -4,16 +4,16 @@ import {
   Checkbox,
   Box,
   Button,
+  Dialog,
   DialogTitle,
   DialogContent,
   TextField,
   DialogActions,
+  FormControlLabel,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import Dialog from "@mui/material/Dialog";
 
-import FormControlLabel from "@mui/material/FormControlLabel";
 import { type Todo } from "../types/todo";
 
 export default function TodoItem({
