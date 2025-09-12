@@ -1,6 +1,17 @@
-import { Checkbox, Box, Button } from "@mui/material";
+import { useState } from "react";
+
+import {
+  Checkbox,
+  Box,
+  Button,
+  DialogTitle,
+  DialogContent,
+  TextField,
+  DialogActions,
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import Dialog from "@mui/material/Dialog";
 
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { type Todo } from "../types/todo";
@@ -16,6 +27,22 @@ export default function TodoItem({
   editTodo: (id: number, editText: string) => void;
   deleteTodo: (id: number) => void;
 }) {
+  const [openDialog, setOpenDialog] = useState(false);
+  const [editText, setEditText] = useState(item.text);
+
+  const handleOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
+
+  const handleSave = () => {
+    editTodo(item.id, editText.trim());
+    setOpenDialog(false);
+  };
+
   return (
     <Box
       sx={{
@@ -42,7 +69,7 @@ export default function TodoItem({
         <Button
           variant="outlined"
           startIcon={<EditIcon />}
-          onClick={() => editTodo(item.id, "test")}
+          onClick={handleOpen}
         >
           Edit
         </Button>
@@ -54,6 +81,26 @@ export default function TodoItem({
           Delete
         </Button>
       </Box>
+
+      <Dialog open={openDialog} onClose={handleClose}>
+        <DialogTitle>Edit Task</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            label="Task"
+            fullWidth
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSave} variant="contained">
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }
