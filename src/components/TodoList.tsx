@@ -20,6 +20,14 @@ export default function TodoList({
     });
   }
 
+  function editTodo(id: number, editText: string): void {
+    setTodos((prevState) => {
+      return prevState.map((item) =>
+        item.id === id ? { ...item, text: editText } : item
+      );
+    });
+  }
+
   function deleteTodo(id: number): void {
     setTodos((prevState) => {
       return prevState.filter((item) => item.id !== id);
@@ -35,6 +43,7 @@ export default function TodoList({
           key={item.id}
           item={item}
           toggleTodo={toggleTodo}
+          editTodo={editTodo}
           deleteTodo={deleteTodo}
         />
       ))}
