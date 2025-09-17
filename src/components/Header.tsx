@@ -1,6 +1,14 @@
-import { Box, AppBar, Toolbar, Typography, IconButton } from "@mui/material";
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Switch,
+} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-// import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness5Icon from "@mui/icons-material/Brightness5";
 import todoIcon from "../assets/work-order.png";
 
 export default function Header({ focusInput }: { focusInput: () => void }) {
@@ -26,9 +34,11 @@ export default function Header({ focusInput }: { focusInput: () => void }) {
           <IconButton color="inherit" onClick={focusInput}>
             <AddIcon />
           </IconButton>
-          {/* <IconButton color="inherit">
+          <IconButton color="inherit">
             <Brightness4Icon />
-          </IconButton> */}
+            <Switch />
+            <Brightness5Icon />
+          </IconButton>
         </div>
       </Toolbar>
     </AppBar>
