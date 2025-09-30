@@ -1,4 +1,4 @@
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function Footer() {
   return (
@@ -19,30 +19,39 @@ export default function Footer() {
           © 2025 My ToDo App
         </Typography>
         <Box>
-          <Link
+          <Typography
             href="https://github.com/Alozi"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ ml: 2 }}
+            variant="body2"
+            color="primary"
+            component="a"
           >
             GitHub
-          </Link>
-          <Link
+          </Typography>
+          <Typography
             href="https://linkedin.com/in/victoria-bogutska-1135a923b"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ ml: 2 }}
+            variant="body2"
+            color="primary"
+            component="a"
           >
             LinkedIn
-          </Link>
-          <Link
+          </Typography>
+          <Typography
             href="https://www.flaticon.com/free-icons/to-do-list"
             title="to do list icons"
             target="_blank"
             sx={{ ml: 2 }}
+            variant="body2"
+            color="primary"
+            component="a"
           >
             To do list icons created by Freepik - Flaticon
-          </Link>
+          </Typography>
         </Box>
       </Box>
     </footer>
