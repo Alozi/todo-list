@@ -41,7 +41,7 @@ export default function TodoInput({
     >
       <TextField
         id="outlined-basic"
-        label="New task"
+        label="Add a new task"
         variant="standard"
         sx={{ width: "100%" }}
         inputRef={inputRef}
