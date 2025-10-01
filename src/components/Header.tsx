@@ -93,15 +93,9 @@ export default function Header({ focusInput }: { focusInput: () => void }) {
           <IconButton color="inherit" onClick={focusInput}>
             <AddIcon />
           </IconButton>
-          <IconButton color="inherit">
-            <Brightness4Icon />
-            <Switch />
-            <Brightness5Icon />
-          </IconButton>
-
           <FormControlLabel
             control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-            label="MUI switch"
+            label=""
           />
         </div>
       </Toolbar>
