@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Box,
   AppBar,
@@ -9,8 +8,8 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useTheme } from "../context/theme/useTheme";
 import AddIcon from "@mui/icons-material/Add";
-
 import todoIcon from "../assets/work-order.png";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -70,9 +69,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function Header({ focusInput }: { focusInput: () => void }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  console.log(isDarkMode);
+  const { theme, toggleTheme } = useTheme();
+  console.log(theme);
 
   return (
     <AppBar
@@ -100,8 +98,8 @@ export default function Header({ focusInput }: { focusInput: () => void }) {
             control={
               <MaterialUISwitch
                 sx={{ m: 1 }}
-                // defaultChecked
-                onChange={(e) => setIsDarkMode(e.target.checked)}
+                checked={theme === "dark"}
+                onChange={() => toggleTheme()}
               />
             }
             label=""

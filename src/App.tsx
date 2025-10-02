@@ -5,6 +5,7 @@ import AddIcon from "@mui/icons-material/Add";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
+import { ThemeProvider } from "./context/theme/ThemeProvider";
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -14,7 +15,7 @@ function App() {
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Header focusInput={focusInput} />
       <Container maxWidth="md">
         <Typography
@@ -35,7 +36,7 @@ function App() {
         </Fab>
       </Container>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 
