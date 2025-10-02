@@ -12,7 +12,6 @@ export default function Footer() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          bgcolor: "grey.100",
         }}
       >
         <Typography variant="body2" color="textSecondary">
