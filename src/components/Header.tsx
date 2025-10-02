@@ -13,7 +13,6 @@ import todoIcon from "../assets/work-order.png";
 
 export default function Header({ focusInput }: { focusInput: () => void }) {
   const { theme, toggleTheme } = useTheme();
-  console.log(theme);
 
   return (
     <AppBar
