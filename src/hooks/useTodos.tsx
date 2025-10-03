@@ -32,5 +32,17 @@ export default function useTodos() {
     });
   }
 
-  return { todos, setTodos, toggleTodo, editTodo, deleteTodo, deleteCompleted };
+  function completedTodosQuantity() {
+    return todos.filter((item) => item.completed).length;
+  }
+
+  return {
+    todos,
+    setTodos,
+    toggleTodo,
+    editTodo,
+    deleteTodo,
+    deleteCompleted,
+    completedTodosQuantity,
+  };
 }
