@@ -8,11 +8,16 @@ export default function TodoList({
 }: {
   inputRef: React.RefObject<HTMLInputElement | null>;
 }) {
-  const { todos, setTodos, toggleTodo, editTodo, deleteTodo } = useTodos();
+  const { todos, setTodos, toggleTodo, editTodo, deleteTodo, deleteCompleted } =
+    useTodos();
 
   return (
     <FormGroup>
-      <TodoInput setTodos={setTodos} inputRef={inputRef} />
+      <TodoInput
+        setTodos={setTodos}
+        inputRef={inputRef}
+        deleteCompleted={deleteCompleted}
+      />
 
       {todos.map((item) => (
         <TodoItem

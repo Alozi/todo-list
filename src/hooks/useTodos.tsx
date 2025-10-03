@@ -26,5 +26,11 @@ export default function useTodos() {
     });
   }
 
-  return { todos, setTodos, toggleTodo, editTodo, deleteTodo };
+  function deleteCompleted() {
+    setTodos((todos) => {
+      return todos.filter((todos) => todos.completed === false);
+    });
+  }
+
+  return { todos, setTodos, toggleTodo, editTodo, deleteTodo, deleteCompleted };
 }

@@ -1,13 +1,16 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { type Todo } from "../types/todo";
+import DeleteCompletedButton from "./DeleteCompletedButton";
 
 export default function TodoInput({
   inputRef,
   setTodos,
+  deleteCompleted,
 }: {
   setTodos: Dispatch<SetStateAction<Todo[]>>;
   inputRef: React.RefObject<HTMLInputElement | null>;
+  deleteCompleted: () => void;
 }) {
   const [error, setError] = useState("");
 
@@ -52,6 +55,7 @@ export default function TodoInput({
       <Button variant="contained" type="submit" onClick={handleSubmit}>
         Add
       </Button>
+      <DeleteCompletedButton deleteCompleted={deleteCompleted} />
     </Box>
   );
 }
