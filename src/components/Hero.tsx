@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, LinearProgress, Typography, useTheme } from "@mui/material";
 
 export default function Hero({
   todosCompleted,
@@ -7,44 +7,69 @@ export default function Hero({
   todosCompleted: number;
   totalTodos: number;
 }) {
+  const theme = useTheme();
+  const progress = totalTodos === 0 ? 0 : (todosCompleted / totalTodos) * 100;
+
   return (
     <Box
       sx={{
-        border: "1px solid #90caf9",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-around",
-        alignSelf: "center",
-        width: "100%",
-        maxWidth: "455px",
-        padding: "12px",
+        border: `1px solid ${theme.palette.primary.main}`,
         borderRadius: "11px",
-        margin: "0 auto 20px",
+        padding: "20px",
+        marginBottom: "20px",
       }}
     >
-      <Box>
-        <Typography variant="h4" component="h2">
-          Task Done
-        </Typography>
-        <Typography variant="h6" component="p">
-          Keep it up
-        </Typography>
-      </Box>
       <Box
         sx={{
-          backgroundColor: "#90caf9",
-          width: "150px",
-          height: "150px",
-          borderRadius: "75px",
-          fontSize: "48px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
+          justifyContent: "space-around",
+          alignSelf: "center",
+          width: "100%",
+          maxWidth: "455px",
+          padding: "12px",
+          margin: "0 auto 20px",
+          bgcolor: theme.palette.background.paper,
         }}
       >
-        {todosCompleted}/{totalTodos}
+        <Box>
+          <Typography variant="h4" component="h2">
+            Task Done
+          </Typography>
+          <Typography variant="h6" component="p">
+            Keep it up
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
+            width: "150px",
+            height: "150px",
+            borderRadius: "75px",
+            fontSize: "48px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          {todosCompleted}/{totalTodos}
+        </Box>
       </Box>
+      <LinearProgress
+        variant="determinate"
+        value={progress}
+        sx={{
+          mt: 1,
+          height: 10,
+          borderRadius: 5,
+          backgroundColor: theme.palette.action.hover,
+          "& .MuiLinearProgress-bar": {
+            backgroundColor: theme.palette.primary.main,
+          },
+        }}
+      />
     </Box>
   );
 }
