@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Box, LinearProgress, Typography, useTheme } from "@mui/material";
+import confetti from "canvas-confetti";
 
 export default function Hero({
   todosCompleted,
@@ -9,6 +11,20 @@ export default function Hero({
 }) {
   const theme = useTheme();
   const progress = totalTodos === 0 ? 0 : (todosCompleted / totalTodos) * 100;
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    if (todosCompleted === totalTodos && totalTodos > 0) {
+      setScale(1.2);
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      const timer = setTimeout(() => setScale(1), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [todosCompleted, totalTodos]);
 
   return (
     <Box
@@ -52,6 +68,8 @@ export default function Hero({
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
+            transform: `scale(${scale})`,
+            transition: "transform 0.3s ease",
           }}
         >
           {todosCompleted}/{totalTodos}
