@@ -14,7 +14,7 @@ export default function DeleteCompletedButton({
       onClick={deleteCompleted}
       sx={{ width: "40%" }}
     >
-      DeleteCompleted
+      Delete Completed
     </Button>
   );
 }
