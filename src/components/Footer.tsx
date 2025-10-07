@@ -9,12 +9,24 @@ export default function Footer() {
           borderColor: "divider",
           p: 2,
           mt: 2,
-          display: "flex",
+          display: {
+            xs: "block",
+            sm: "flex",
+          },
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <Typography variant="body2" color="textSecondary">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          sx={{
+            mb: {
+              xs: 1,
+              sm: 0,
+            },
+          }}
+        >
           © 2025 My ToDo App
         </Typography>
         <Box>
@@ -22,7 +34,12 @@ export default function Footer() {
             href="https://github.com/Alozi"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ ml: 2 }}
+            sx={{
+              ml: {
+                xs: 0,
+                sm: 2,
+              },
+            }}
             variant="body2"
             color="primary"
             component="a"
