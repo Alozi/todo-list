@@ -53,11 +53,21 @@ export default function TodoItem({
       <FormControlLabel
         control={
           <Checkbox
+            size="small"
             checked={item.completed}
             onChange={() => toggleTodo(item.id)}
           />
         }
         label={item.text}
+        sx={{
+          "& .MuiFormControlLabel-label": {
+            fontSize: {
+              xs: "12px",
+              sm: "14px",
+              md: "16px",
+            },
+          },
+        }}
       />
       <Box
         sx={{
@@ -69,6 +79,13 @@ export default function TodoItem({
           variant="outlined"
           startIcon={<EditIcon />}
           onClick={handleOpen}
+          sx={{
+            fontSize: { xs: 10, md: 14 },
+            padding: {
+              xs: "2px 8px",
+              sm: "5px 15px",
+            },
+          }}
         >
           Edit
         </Button>
@@ -76,6 +93,13 @@ export default function TodoItem({
           variant="outlined"
           startIcon={<DeleteIcon />}
           onClick={() => deleteTodo(item.id)}
+          sx={{
+            fontSize: { xs: 10, md: 14 },
+            padding: {
+              xs: "2px 8px",
+              sm: "5px 15px",
+            },
+          }}
         >
           Delete
         </Button>

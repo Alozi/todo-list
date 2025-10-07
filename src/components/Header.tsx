@@ -18,18 +18,44 @@ export default function Header({ focusInput }: { focusInput: () => void }) {
     <AppBar
       position="static"
       color="secondary"
-      sx={{ marginBottom: 2, padding: 2 }}
+      sx={{
+        marginBottom: 2,
+        padding: {
+          xs: 1,
+          md: 2,
+        },
+      }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 5 }}>
-          <Typography variant="h3" component="h1">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: {
+              xs: 2,
+              md: 5,
+            },
+          }}
+        >
+          <Typography
+            variant="h3"
+            component="h1"
+            sx={{ fontSize: { xs: 28, md: 48 } }}
+          >
             ToDo List
           </Typography>
           <Box
             component="img"
             src={todoIcon}
             alt="Logo"
-            sx={{ width: 100, height: "auto", borderRadius: 2 }}
+            sx={{
+              width: {
+                xs: 60,
+                md: 100,
+              },
+              height: "auto",
+              borderRadius: 2,
+            }}
           />
         </Box>
         <div>

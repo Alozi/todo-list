@@ -35,27 +35,67 @@ export default function TodoInput({
   return (
     <Box
       sx={{
-        display: "flex",
+        display: {
+          xs: "block",
+          sm: "flex",
+        },
         justifyContent: "space-between",
         alignItems: "center",
-        gap: 4,
-        marginBottom: 2,
+        gap: {
+          xs: 2,
+        },
+        marginBottom: {
+          xs: "16px",
+          md: "20px",
+        },
       }}
     >
       <TextField
         id="outlined-basic"
         label="Add a new task"
         variant="standard"
-        sx={{ width: "100%" }}
+        sx={{
+          width: {
+            xs: "100%",
+            md: "60%",
+          },
+          marginBottom: {
+            xs: "16px",
+            sm: 0,
+          },
+        }}
         inputRef={inputRef}
         onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         error={!!error}
         helperText={error}
       />
-      <Button variant="contained" type="submit" onClick={handleSubmit}>
-        Add
-      </Button>
-      <DeleteCompletedButton deleteCompleted={deleteCompleted} />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: {
+            xs: 2,
+          },
+        }}
+      >
+        <Button
+          variant="contained"
+          type="submit"
+          onClick={handleSubmit}
+          sx={{
+            whiteSpace: "nowrap",
+            fontSize: { xs: 12, md: 14 },
+            width: {
+              xs: "50%",
+              sm: "auto",
+            },
+          }}
+        >
+          Add
+        </Button>
+        <DeleteCompletedButton deleteCompleted={deleteCompleted} />
+      </Box>
     </Box>
   );
 }

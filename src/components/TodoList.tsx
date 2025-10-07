@@ -42,22 +42,28 @@ export default function TodoList({
         totalTodos={todos.length}
       />
 
-      <TodoInput
-        setTodos={setTodos}
-        inputRef={inputRef}
-        deleteCompleted={deleteCompleted}
-      />
-
       <ToggleButtonGroup
         value={filter}
         exclusive
         onChange={handleFilterChange}
         sx={{ mb: 2 }}
       >
-        <ToggleButton value="all">All</ToggleButton>
-        <ToggleButton value="active">Active</ToggleButton>
-        <ToggleButton value="completed">Completed</ToggleButton>
+        <ToggleButton sx={{ fontSize: { xs: 12, md: 14 } }} value="all">
+          All
+        </ToggleButton>
+        <ToggleButton sx={{ fontSize: { xs: 12, md: 14 } }} value="active">
+          Active
+        </ToggleButton>
+        <ToggleButton sx={{ fontSize: { xs: 12, md: 14 } }} value="completed">
+          Completed
+        </ToggleButton>
       </ToggleButtonGroup>
+
+      <TodoInput
+        setTodos={setTodos}
+        inputRef={inputRef}
+        deleteCompleted={deleteCompleted}
+      />
 
       {filteredTodos.map((item) => (
         <TodoItem

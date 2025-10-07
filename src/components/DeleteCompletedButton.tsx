@@ -12,7 +12,14 @@ export default function DeleteCompletedButton({
       color="secondary"
       startIcon={<DeleteSweepIcon />}
       onClick={deleteCompleted}
-      sx={{ width: "40%" }}
+      sx={{
+        whiteSpace: "nowrap",
+        fontSize: { xs: 12, md: 14 },
+        width: {
+          xs: "50%",
+          sm: "auto",
+        },
+      }}
     >
       Delete Completed
     </Button>

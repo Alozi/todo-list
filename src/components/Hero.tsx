@@ -31,8 +31,14 @@ export default function Hero({
       sx={{
         border: `1px solid ${theme.palette.primary.main}`,
         borderRadius: "11px",
-        padding: "20px",
-        marginBottom: "20px",
+        padding: {
+          xs: "10px",
+          md: "20px",
+        },
+        marginBottom: {
+          xs: "16px",
+          md: "20px",
+        },
       }}
     >
       <Box
@@ -43,16 +49,30 @@ export default function Hero({
           alignSelf: "center",
           width: "100%",
           maxWidth: "455px",
-          padding: "12px",
-          margin: "0 auto 20px",
+          margin: {
+            xs: "0 auto 16px",
+            md: "0 auto 20px",
+          },
+          padding: {
+            xs: "12px",
+            md: "20px",
+          },
           bgcolor: theme.palette.background.paper,
         }}
       >
         <Box>
-          <Typography variant="h4" component="h2">
+          <Typography
+            variant="h4"
+            component="h2"
+            sx={{ fontSize: { xs: 34, md: 38 } }}
+          >
             Task Done
           </Typography>
-          <Typography variant="h6" component="p">
+          <Typography
+            variant="h6"
+            component="p"
+            sx={{ fontSize: { xs: 20, md: 24 } }}
+          >
             Keep it up
           </Typography>
         </Box>
@@ -60,10 +80,16 @@ export default function Hero({
           sx={{
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
-            width: "150px",
-            height: "150px",
-            borderRadius: "75px",
-            fontSize: "48px",
+            width: {
+              xs: "100px",
+              md: "150px",
+            },
+            height: {
+              xs: "100px",
+              md: "150px",
+            },
+            borderRadius: "50%",
+            fontSize: { xs: 32, md: 48 },
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

@@ -9,11 +9,24 @@ export default function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <Container maxWidth="md">
+    <Container
+      maxWidth="md"
+      sx={{
+        padding: {
+          xs: 1,
+          sm: 2,
+          md: 5,
+        },
+      }}
+    >
       <Typography
         variant="h3"
         component="h1"
-        sx={{ marginBottom: 4, textAlign: "center" }}
+        sx={{
+          marginBottom: { xs: 2, md: 4 },
+          textAlign: "center",
+          fontSize: { xs: 32, md: 48 },
+        }}
       >
         Junior React Developer Roadmap
       </Typography>
