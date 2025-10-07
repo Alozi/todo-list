@@ -15,7 +15,9 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Header focusInput={focusInput} />
+      <Header
+      // focusInput={focusInput}
+      />
       <Layout focusInput={focusInput}>
         <TodoList inputRef={inputRef} />
       </Layout>
