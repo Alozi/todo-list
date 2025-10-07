@@ -34,10 +34,22 @@ export default function Layout({
       <Fab
         color="primary"
         aria-label="add"
-        sx={{ position: "fixed", bottom: 64, right: 32 }}
+        sx={{
+          position: "fixed",
+          width: {
+            xs: 33,
+            md: 56,
+          },
+          height: {
+            xs: 33,
+            md: 56,
+          },
+          bottom: { xs: 32, md: 64 },
+          right: { xs: 16, md: 32 },
+        }}
         onClick={focusInput}
       >
-        <AddIcon />
+        <AddIcon sx={{ fontSize: { xs: "16px", md: "24px" } }} />
       </Fab>
     </Container>
   );
