@@ -23,7 +23,7 @@ export default function TodoList({
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
 
   function handleFilterChange(
-    event: React.MouseEvent<HTMLElement>,
+    _: React.MouseEvent<HTMLElement>,
     newFilter: "all" | "active" | "completed" | null
   ) {
     if (newFilter !== null) setFilter(newFilter);
