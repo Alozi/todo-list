@@ -61,7 +61,7 @@ You can easily add, edit, delete, and filter your tasks — all with local stora
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/todo-list.git
+git clone https://github.com/Alozi/todo-list.git
 
 # Move to folder
 cd todo-list
